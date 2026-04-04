@@ -1,0 +1,55 @@
+# ============================================================
+# bearfamily-ui — Docker Compose
+#
+# Development (with live HMR):
+#   docker compose watch
+#
+# Production (nginx, static bundle):
+#   docker compose --profile prod up --build
+#   Build args: VITE_SUPABASE_URL  VITE_SUPABASE_ANON_KEY
+# ============================================================
+
+services:
+
+  # ----------------------------------------------------------
+  # DEV — Vite dev server with Compose Watch (hot reload)
+  # ----------------------------------------------------------
+  dev:
+    build:
+      context: ./bearfamily-ui
+      target: dev
+    ports:
+      - "5173:5173"
+    develop:
+      watch:
+        # Sync source changes instantly — Vite HMR handles the rest
+        - action: sync
+          path: ./bearfamily-ui/src
+          target: /app/src
+          ignore:
+            - node_modules/
+        - action: sync
+          path: ./bearfamily-ui/public
+          target: /app/public
+        # Vite config change → restart the dev server
+        - action: sync+restart
+          path: ./bearfamily-ui/vite.config.ts
+          target: /app/vite.config.ts
+        # Dependency changes → full rebuild of the dev image
+        - action: rebuild
+          path: ./bearfamily-ui/package.json
+        - action: rebuild
+          path: ./bearfamily-ui/package-lock.json
+
+  # ----------------------------------------------------------
+  # PROD — nginx serving the compiled static bundle
+  # ----------------------------------------------------------
+  app:
+    build:
+      context: ./bearfamily-ui
+      target: production
+    ports:
+      - "80:80"
+    restart: unless-stopped
+    profiles:
+      - prod
