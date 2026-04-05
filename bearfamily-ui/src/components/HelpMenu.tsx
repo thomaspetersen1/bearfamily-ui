@@ -1,16 +1,13 @@
-const helpItems = [
-  { icon: 'menu_book', label: 'Instructions', href: '#' },
-  { icon: 'quiz',      label: 'FAQ',          href: '#' },
-  { icon: 'mail',      label: 'Contact',      href: '#' },
-]
+const helpItems = [{ icon: "menu_book", label: "Instructions", href: "#" }];
 
 export default function HelpMenu() {
   return (
-    <div className="group fixed bottom-4 -right-10">
-      {/* Options — slide up when the group is hovered */}
+    <div className="group fixed bottom-4 right-4 w-14 h-14">
+      {/* Options — absolutely above the button, right-aligned so they grow leftward */}
       <div
         className="
-          flex flex-col items-end gap-2 pb-3
+          absolute bottom-full right-0 pb-3
+          flex flex-col items-end gap-2
           opacity-0 translate-y-2 pointer-events-none
           group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto
           transition-all duration-200 ease-out
@@ -22,7 +19,10 @@ export default function HelpMenu() {
             href={href}
             className="flex items-center gap-2 bg-surface border border-outline-variant/40 text-on-surface px-4 py-2 rounded-full shadow-md text-sm font-body font-medium whitespace-nowrap hover:bg-surface-container transition-colors"
           >
-            <span className="material-symbols-outlined text-primary" style={{ fontSize: '18px' }}>
+            <span
+              className="material-symbols-outlined text-primary"
+              style={{ fontSize: "18px" }}
+            >
               {icon}
             </span>
             {label}
@@ -40,5 +40,5 @@ export default function HelpMenu() {
         </span>
       </button>
     </div>
-  )
+  );
 }
