@@ -7,7 +7,7 @@ export default function Dashboard() {
       <Sidebar />
 
       <main className="md:ml-64 h-screen pt-16 md:pt-0 overflow-hidden">
-        <div className="p-6 md:p-12 max-w-7xl mx-auto">
+        <div className="p-6 md:p-12 max-w-7xl mx-auto h-full overflow-hidden">
           {/* Page Header */}
           <div className="mb-12">
             <h2 className="text-5xl font-headline font-black text-primary tracking-tighter mb-4">
