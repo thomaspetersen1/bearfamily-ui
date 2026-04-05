@@ -1,3 +1,5 @@
+import teddy from "../assets/teddy.png";
+
 const navItems = [
   { icon: "dashboard", label: "Dashboard", href: "#", active: true },
   {
@@ -14,7 +16,8 @@ export default function Sidebar() {
     <aside className="h-screen w-64 fixed left-0 top-0 flex flex-col py-8 px-6 bg-surface shadow-[4px_0_24px_rgba(27,29,14,0.06)] z-50">
       {/* Brand */}
       <div className="mb-12">
-        <h1 className="text-2xl font-headline font-black text-primary leading-none">
+        <h1 className="flex items-center gap-2 text-2xl font-headline font-black text-primary leading-none">
+          <img src={teddy} alt="Teddy Bear" className="w-8 h-8 object-contain" />
           Bear Family
         </h1>
       </div>
