@@ -1,4 +1,6 @@
-const helpItems = [{ icon: "menu_book", label: "Instructions", href: "#" }];
+const helpItems = [
+  { icon: "menu_book", label: "Instructions", href: "#instructions" },
+];
 
 export default function HelpMenu() {
   return (
