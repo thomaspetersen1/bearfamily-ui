@@ -1,6 +1,6 @@
 # Vault
 
-Vault is the Bear Family password manager, powered by Vaultwarden — a self-hosted Bitwarden-compatible server.
+Vault is the Bear Family password manager, powered by Vaultwarden: a self-hosted Bitwarden-compatible server.
 
 ## Accessing Vault
 
