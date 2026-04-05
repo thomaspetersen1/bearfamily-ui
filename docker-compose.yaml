@@ -44,7 +44,7 @@ services:
   # ----------------------------------------------------------
   # PROD — nginx serving the compiled static bundle
   # ----------------------------------------------------------
-  app:
+  bearfamily-ui:
     build:
       context: ./bearfamily-ui
       target: production
