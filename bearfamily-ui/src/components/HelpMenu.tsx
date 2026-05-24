@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 const helpItems = [
+  { icon: "monitoring", label: "Status", href: "https://status.bearfamily.net/status/bearfamily" },
   { icon: "menu_book", label: "Instructions", href: "#instructions" },
-  { icon: "monitoring", label: "Status", href: "https://status.bearfamily.net" },
 ];
 
 export default function HelpMenu() {
