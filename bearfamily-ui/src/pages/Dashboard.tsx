@@ -1,7 +1,7 @@
 import Sidebar from "../components/Sidebar";
 import HelpMenu from "../components/HelpMenu";
-import campsiteLandscape from "../assets/campsite-landscape.png";
-import campsitePortrait from "../assets/campsite-portrait.png";
+import campsiteLandscape from "../assets/campsite-landscape.webp";
+import campsitePortrait from "../assets/campsite-portrait.webp";
 
 export default function Dashboard() {
   return (
