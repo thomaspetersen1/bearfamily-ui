@@ -1,5 +1,7 @@
-import Sidebar from '../components/Sidebar'
-import HelpMenu from '../components/HelpMenu'
+import Sidebar from "../components/Sidebar";
+import HelpMenu from "../components/HelpMenu";
+import campsiteLandscape from "../assets/campsite-landscape.png";
+import campsitePortrait from "../assets/campsite-portrait.png";
 
 export default function Dashboard() {
   return (
@@ -9,25 +11,34 @@ export default function Dashboard() {
       <main className="md:ml-64 h-dvh pt-16 md:pt-0 overflow-hidden">
         <div className="p-6 md:p-12 max-w-7xl mx-auto h-full overflow-hidden flex flex-col">
           {/* Page Header */}
-          <div className="mb-6 md:mb-12">
-            <h2 className="text-3xl md:text-5xl font-headline font-black text-primary tracking-tighter mb-4 whitespace-nowrap">
+          <div className="mb-2 md:mb-4">
+            <h2 className="text-3xl md:text-5xl font-headline font-black text-primary tracking-tighter whitespace-nowrap">
               Welcome Home
             </h2>
+            <p className="text-sm md:text-lg font-headline font-semibold text-on-surface-variant tracking-tight">
+              Bear Family
+            </p>
           </div>
 
           {/* Hero Canvas */}
-          <div className="relative w-full flex-1 min-h-0 rounded-xl bg-surface-container-highest overflow-hidden shadow-sm flex items-center justify-center border-2 border-dashed border-outline-variant/40">
-            <div className="absolute inset-0 opacity-20 bg-gradient-to-br from-primary via-surface-container to-tertiary" />
-            <div className="relative z-10 text-center px-6">
-              <h3 className="text-2xl font-headline font-bold text-on-surface-variant mb-2">
-                Picture Placeholder
-              </h3>
-            </div>
+          <div className="relative w-full flex-1 min-h-0">
+            {/* Desktop: wide 16:9 campsite art fills the frame */}
+            <img
+              src={campsiteLandscape}
+              alt="Bear family at the campsite"
+              className="hidden md:block w-full h-full object-cover object-center rounded-2xl shadow-md"
+            />
+            {/* Mobile: 9:16 portrait art made to fit the tall phone canvas */}
+            <img
+              src={campsitePortrait}
+              alt="Bear family at the campsite"
+              className="md:hidden w-full h-full object-cover object-center rounded-2xl shadow-md"
+            />
           </div>
         </div>
       </main>
 
       <HelpMenu />
     </>
-  )
+  );
 }
