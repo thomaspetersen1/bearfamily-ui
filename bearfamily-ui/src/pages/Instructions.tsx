@@ -20,6 +20,14 @@ const services: Service[] = [
       "Password manager — store and share family passwords securely.",
     mdFile: "/instructions/vault.md",
   },
+  {
+    id: "minecraft",
+    label: "Minecraft Server",
+    icon: "sports_esports",
+    description:
+      "Join the modded family Minecraft server — network setup, mods, and voice chat.",
+    mdFile: "/instructions/minecraft_join.md",
+  },
 ];
 
 function ServiceCard({ service }: { service: Service }) {
@@ -78,9 +86,15 @@ function ServiceCard({ service }: { service: Service }) {
               [&_h1]:font-headline [&_h1]:font-black [&_h1]:text-2xl [&_h1]:text-primary [&_h1]:mb-4 [&_h1]:mt-0
               [&_h2]:font-headline [&_h2]:font-bold [&_h2]:text-base [&_h2]:text-on-surface [&_h2]:uppercase [&_h2]:tracking-tight [&_h2]:mt-6 [&_h2]:mb-2
               [&_p]:text-on-surface-variant [&_p]:leading-relaxed
-              [&_li]:text-on-surface-variant [&_li]:leading-relaxed
-              [&_a]:text-primary [&_a]:underline
+              [&_ul]:my-3 [&_ul]:pl-5 [&_ul]:list-disc [&_ul]:space-y-1
+              [&_ol]:my-3 [&_ol]:pl-5 [&_ol]:list-decimal [&_ol]:space-y-1
+              [&_li]:text-on-surface-variant [&_li]:leading-relaxed [&_li]:pl-1
+              [&_strong]:text-on-surface [&_strong]:font-bold
+              [&_a]:text-primary [&_a]:underline [&_a]:break-words
+              [&_hr]:my-6 [&_hr]:border-outline-variant
               [&_code]:bg-surface-container-highest [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:rounded [&_code]:text-xs [&_code]:font-mono [&_code]:text-on-surface
+              [&_pre]:bg-surface-container-highest [&_pre]:border [&_pre]:border-outline-variant [&_pre]:rounded-lg [&_pre]:p-4 [&_pre]:my-3 [&_pre]:overflow-x-auto
+              [&_pre_code]:bg-transparent [&_pre_code]:p-0 [&_pre_code]:text-xs [&_pre_code]:leading-relaxed [&_pre_code]:whitespace-pre
             "
             >
               <ReactMarkdown>{content ?? ""}</ReactMarkdown>
